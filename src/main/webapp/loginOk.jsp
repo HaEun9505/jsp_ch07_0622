@@ -7,7 +7,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
+	<%	
+		//한글 값 넘겨받기 위해 Encoding
+		request.setCharacterEncoding("utf-8");
 		//getParameter : 문자열로 반환
 		String mid = request.getParameter("id");	//form의 name(tiger)
 		String mpw = request.getParameter("pw");	//form의 name(12345)
@@ -24,7 +26,7 @@
 			out.print("안녕하세요 " + mid + "님 로그인하셨습니다.<br>");
 			out.print("쿠키가 생성되었습니다.");
 		}else{
-			response.sendRedirect("login.jsp");	//(==하이퍼링크)
+			response.sendRedirect("login.jsp");	//(==하이퍼링크) 강제로 페이지 이동
 		}		
 	%>
 	<br>
